@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\NOVA.AI.Client.Application\NOVA.AI.Client.Application.csproj" />
+    <PackageReference Include="Y10.Foundation.Logging.Client" Version="1.10.1" />
+  </ItemGroup>
+</Project>

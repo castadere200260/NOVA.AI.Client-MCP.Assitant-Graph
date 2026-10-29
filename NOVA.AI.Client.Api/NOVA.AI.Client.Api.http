@@ -1,0 +1,105 @@
+@NOVA_AI_Client_BaseUrl = http://localhost:5270
+@ApiKey = LOG-C3AC9504-1CA9-4317-B200-D7A22A7A5AA8
+@ServiceName = NOVA.AI.Client.Api
+
+### Health check
+GET {{NOVA_AI_Client_BaseUrl}}/api/v1/health
+Accept: application/json
+
+### Submit a diagnostic log through Y10.Foundation.Logging.Client
+POST {{NOVA_AI_Client_BaseUrl}}/api/v1/diagnostics/logging
+Accept: application/json
+
+### Log level 0 - Debug
+POST {{NOVA_AI_Client_BaseUrl}}/api/v1/logs
+Content-Type: application/json
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+{
+  "level": 0,
+  "message": "NOVA.AI.Client HTTP Debug test",
+  "serviceName": "{{ServiceName}}",
+  "serviceVersion": "1.0.0",
+  "timestamp": "{{$datetime iso8601}}",
+  "exception": null,
+  "traceId": null,
+  "spanId": null,
+  "correlationId": "nova-http-debug-001",
+  "properties": {
+    "source": "Visual Studio .http",
+    "environment": "Development"
+  }
+}
+
+### Log level 1 - Information
+POST {{NOVA_AI_Client_BaseUrl}}/api/v1/logs
+Content-Type: application/json
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+{
+  "level": 1,
+  "message": "NOVA.AI.Client HTTP Information test",
+  "serviceName": "{{ServiceName}}",
+  "serviceVersion": "1.0.0",
+  "timestamp": "{{$datetime iso8601}}",
+  "exception": null,
+  "traceId": null,
+  "spanId": null,
+  "correlationId": "nova-http-info-001",
+  "properties": {
+    "source": "Visual Studio .http",
+    "environment": "Development"
+  }
+}
+
+### Log level 2 - Warning
+POST {{NOVA_AI_Client_BaseUrl}}/api/v1/logs
+Content-Type: application/json
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+{
+  "level": 2,
+  "message": "NOVA.AI.Client HTTP Warning test",
+  "serviceName": "{{ServiceName}}",
+  "serviceVersion": "1.0.0",
+  "timestamp": "{{$datetime iso8601}}",
+  "exception": null,
+  "traceId": null,
+  "spanId": null,
+  "correlationId": "nova-http-warning-001",
+  "properties": {
+    "source": "Visual Studio .http",
+    "environment": "Development"
+  }
+}
+
+### Log level 3 - Error
+POST {{NOVA_AI_Client_BaseUrl}}/api/v1/logs
+Content-Type: application/json
+Accept: application/json
+X-Api-Key: {{ApiKey}}
+
+{
+  "level": 3,
+  "message": "NOVA.AI.Client HTTP Error test",
+  "serviceName": "{{ServiceName}}",
+  "serviceVersion": "1.0.0",
+  "timestamp": "{{$datetime iso8601}}",
+  
+  "exception": {
+  "type": "System.InvalidOperationException",
+  "message": "Simulated error for NOVA.AI.Client HTTP test",
+  "stackTrace": "   at NOVA.AI.Client.Api.Controllers.LogsController.Post()"
+},
+  "traceId": null,
+  "spanId": null,
+  "correlationId": "nova-http-error-001",
+  "properties": {
+    "source": "Visual Studio .http",
+    "environment": "Development"
+  }
+}
+

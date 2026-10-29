@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NOVA.AI.Client.Domain\NOVA.AI.Client.Domain.csproj" />
+    <PackageReference Include="Y10.Foundation.Logging.Contracts" Version="1.10.1" />
+  </ItemGroup>
+</Project>
